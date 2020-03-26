@@ -1,3 +1,8 @@
+;;;; This was originally a part of StumpWM, a window manager for the X window
+;;;; system written in Common Lisp. As such, the original copyright message is
+;;;; included below.
+;;;; -- equwal 2020-03-26
+
 ;;;; Copyright (C) 2007-2008 Shawn Betts
 ;;;;
 ;;;; stumpwm is free software; you can redistribute it and/or modify
@@ -18,7 +23,6 @@
 ;;;
 ;;; Generate documentation for sigil lines in the source, according to some
 ;;; input documentation standard.
-;;;
 ;;;
 ;;;; Code:
 

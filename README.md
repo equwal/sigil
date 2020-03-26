@@ -1,3 +1,6 @@
+Warning: This is an attempt to take some code from StumpWM and make it a
+separate library. It may not work very well yet, and breaking changes may occur.
+
 # Sigil
 
 Generate documentation for sigil lines in the source, according to some input
