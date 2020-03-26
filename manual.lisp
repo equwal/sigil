@@ -19,6 +19,7 @@
 ;;; Generate documentation for sigil lines in the source, according to some
 ;;; input documentation standard.
 ;;;
+;;;
 ;;;; Code:
 
 (in-package #:sigil)
@@ -76,8 +77,6 @@
 
 (defdoc ("%%%" "defmac" function) "{~a} ~{~a~^ ~}~%~a")
 (defdoc ("###" "defvar" variable nil) "~a~%~a")
-(defdoc ("\\$\\$\\$" "defvr" variable nil) "{Hook} ~a~%~a")
-(defdoc ("!!!" "deffn" function) "{Command} ~a ~{~a~^ ~}~%~a")
 
 (defun generate (os line)
   "Generate a texi.in documentation line."
