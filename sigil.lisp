@@ -28,8 +28,10 @@
 
 (in-package #:sigil)
 
+
 (eval-when (:compile-toplevel :load-toplevel :execute)
   (defvar *doc-fns* nil "The functions used to generate documents.")
+  (defvar *package* :cl "The package to look for symbols in.")
   (defun compile-doc (name body)
     (concatenate 'string
                  "@" name " " body "~&@end " name "~%~%"))
@@ -45,7 +47,7 @@
     `(push (lambda (,os ,line)
              (ppcre:register-groups-bind (,sym)
                  (,(format nil "~@{~A~}" "^" macro "(\\W)*(.*)") ,line)
-               (let* ((,var (find-symbol (string-upcase ,sym) :stumpwm))
+               (let* ((,var (find-symbol (string-upcase ,sym) *package*))
                       (,var (cond ((eql ',specializer 'function)
                                    (symbol-function ,var))
                                   ((eql ',specializer 'macro)
@@ -74,9 +76,9 @@
                (if (find #\( name :test 'char=)
                    ;; handle (setf <symbol>) functions
                    (with-standard-io-syntax
-                     (let ((*package* (find-package :stumpwm)))
+                     (let ((*package* (find-package *package*)))
                        (fdefinition (read-from-string name))))
-                   (symbol-function (find-symbol (string-upcase name) :stumpwm))))
+                   (symbol-function (find-symbol (string-upcase name) *package*))))
         "{~a} ~{~a~^ ~}~%~a")
 
 (defdoc ("%%%" "defmac" function) "{~a} ~{~a~^ ~}~%~a")
