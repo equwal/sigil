@@ -44,7 +44,7 @@
   (with-gensyms (os line sym var)
     `(push (lambda (,os ,line)
              (ppcre:register-groups-bind (,sym)
-                 (,(format nil "~@{~A~}" "^" macro "\\W(.*)") ,line)
+                 (,(format nil "~@{~A~}" "^" macro "(\\W)*(.*)") ,line)
                (let* ((,var (find-symbol (string-upcase ,sym) :stumpwm))
                       (,var (cond ((eql ',specializer 'function)
                                    (symbol-function ,var))
