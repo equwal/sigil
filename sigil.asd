@@ -1,6 +1,6 @@
 ;;;; sigil.asd
 
-(asdf:defsystem #:texi-macro
+(asdf:defsystem #:sigil
   :description "Sigils for Common Lisp documentation."
   :author "Spenser Truex <web@spensertruex.com>"
   :license  "GNU GPL v3"
@@ -8,4 +8,4 @@
   :serial t
   :depends-on (#:sb-introspect)
   :components ((:file "package")
-               (:file "manual")))
+               (:file "sigil")))
