@@ -1,0 +1,38 @@
+\input texinfo   @c -*-texinfo-*-
+@c %**start of header
+@setfilename test.info
+@settitle Test of Sigil.
+@setchapternewpage odd
+@c %**end of header
+
+This is the test file. All of the forms should expand without issue.
+
+Using default package :cl
+### most-positive-fixnum
+%%% defun
+@@@ +
+
+Trying out whitespace
+two spaces
+###  most-positive-fixnum
+no space
+%%%defun
+tab
+@@@	+
+
+exported qualifiers
+%%% sigil:defdoc
+### cl:most-positive-fixnum
+@@@ sigil:generate-manual
+
+Fully qualified
+%%% sigil::defdoc
+### cl::most-positive-fixnum
+@@@ sigil::generate-manual
+
+Inside a package
+::: sigil
+%%% defdoc
+@@@ generate-manual
+::: cl
+### most-positive-fixnum
