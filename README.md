@@ -1,4 +1,4 @@
-# texi-macro
+# Sigil
 
 Generate source documentation inside of texinfo files with short macros.
 
@@ -21,6 +21,10 @@ implementations is welcome.
 
 ## Hacking
 Write new forms with the `defdoc` macro.
+
+### TODO
+
+- Be more general in supporting more output types than tex.
 
 ## License
 

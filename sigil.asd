@@ -1,4 +1,4 @@
-;;;; texi-macro.asd
+;;;; sigil.asd
 
 (asdf:defsystem #:texi-macro
   :description "Texinfo sigils for Common Lisp documentation."
