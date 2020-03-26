@@ -15,12 +15,13 @@
 ;;;; <http://www.gnu.org/licenses/>.
 
 ;;;; Commentary:
-;;;;
-;;;; Generate the texinfo manual from docstrings in the source.
-;;;;
+;;;
+;;; Generate documentation for sigil lines in the source, according to some
+;;; input documentation standard.
+;;;
 ;;;; Code:
 
-(in-package #:texi-macro)
+(in-package #:sigil)
 
 (eval-when (:compile-toplevel :load-toplevel :execute)
   (defvar *doc-fns* nil "The functions used to generate documents.")
