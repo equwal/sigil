@@ -2,4 +2,5 @@
   (:use :cl)
   (:import-from :sb-introspect :function-lambda-list)
   (:import-from :alexandria :with-gensyms)
-  (:export :defdoc))
+  (:export :defdoc
+           :generate-manual))
